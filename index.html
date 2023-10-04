@@ -10,7 +10,7 @@
       
       
       
-        <link rel="next" href="instalacao/">
+        <link rel="next" href="configuracao/">
       
       
       <link rel="icon" href="assets/images/favicon.png">
@@ -252,11 +252,11 @@
   
   
     <li class="md-nav__item">
-      <a href="instalacao/" class="md-nav__link">
+      <a href="configuracao/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Guia de Instalação
+    Configuração
   </span>
   
 
@@ -482,151 +482,15 @@
   <img src="https://raw.githubusercontent.com/reginaldo-marinho/rucula-js/b76e809a44a66de3733e30388e29d672c8b61011/docs/assets/rucula.svg" style="width:200px">
 </p>
 
-<p><strong>Bem vindo ao projeto rucula-js, aqui você aprenderá a criar janelas e consumir API's Rest de uma forma mais rápida e mais consistente.  Esqueça o problema de ter que se preucupar em validar campos, efetuar cálculos matemáticos, criar e mapear objetos do tipo array e por ultimo o mais redundante, criar div's e mais div's para representar formularios que estão passiveis de erros e de falta de padronização.</strong></p>
+<p>Bem vindo ao projeto rucula-js, aqui você aprenderá a criar janelas e consumir API's Rest de uma forma mais rápida e mais consistente.  Esqueça o problema de ter que se preucupar em validar campos, efetuar cálculos matemáticos, criar e mapear objetos do tipo array e por ultimo o mais redundante, criar div's e mais div's para representar formularios que estão passiveis de erros e de falta de padronização.</p>
 <h2 id="os-niveis-de-atuacao-do-rucula-js">Os Níveis de Atuação do Rucula-js</h2>
 <p>O rucula funciona em três níveis, cada nivel representa um etapa e o limite do seu funcionamento</p>
 <ul>
 <li><strong>1° Nivel</strong> Configuração global da aplicação - Aqui é configurado os ambientes e as localizações</li>
 <li><strong>2° Nivel</strong> Criação e Configuração da Janela - Aqui se obtém todas estrura necessária para criação da Janela desejada</li>
 <li><strong>3° Nivel</strong> Contrução da Jenela - Aqui o rucula-js lê as Configurações Globais e as Configurações da Janela e converte em uma interface de usuário amigavel</li>
-<li><strong>4° Nivel</strong> - Criação e Controle dos Objetos - Com base nos eventos da Janela o Rucula-js cria e valida objetos dinamicamente até o objeto estar 100% em conformidade com as configurações passadas. Para seber mais visite <a href="conceitos/">Conceitos Rucula</a></li>
+<li><strong>4° Nivel</strong> - Criação e Controle dos Objetos - Com base nos eventos da Janela o Rucula-js cria e valida objetos dinamicamente até o objeto estar 100% em conformidade com as configurações passadas. Para seber mais visite <a href="conceitos/">Conceitos Rucula</a>.</li>
 </ul>
-<p><strong>1° Nivel</strong></p>
-<pre><code class="language-json">{
-    &quot;environments&quot;:[
-        {
-            &quot;env&quot;:&quot;development&quot;,
-            &quot;hostname&quot;:&quot;https://localhost&quot;,
-            &quot;port&quot;: &quot;7299&quot;
-        }
-    ],
-    &quot;localizations&quot;:[
-        {
-            &quot;locales&quot;:&quot;pt-BR&quot;,
-            &quot;language&quot;:&quot;Português&quot;,
-            &quot;currency&quot;:&quot;BRL&quot;,
-            &quot;maxDecimal&quot;:5
-        }
-    ] 
-}   
-</code></pre>
-<p><strong>2° Nivel</strong></p>
-<pre><code class="language-json">{
-    &quot;name&quot;:&quot;Ordem de Serviço&quot;,
-    &quot;pathController&quot;:&quot;/api/OrdemServico&quot;,
-    &quot;urlGetAll&quot;:&quot;&quot;,
-    &quot;urlGetId&quot;:&quot;&quot;,
-    &quot;type&quot;:&quot;crud&quot;,
-    &quot;frames&quot;:[
-       {
-          &quot;name&quot;:&quot;📝 Header OS&quot;,
-          &quot;type&quot;:&quot;block&quot;,
-          &quot;objectDto&quot;:&quot;ordemDeServico&quot;,
-          &quot;sequence&quot;:0,
-          &quot;fields&quot;:[
-             {
-                &quot;propertDto&quot;:&quot;codigo&quot;,
-                &quot;description&quot;:&quot;Código&quot;,
-                &quot;information&quot;:&quot;&quot;,
-                &quot;type&quot;:&quot;text&quot;,
-                &quot;maxLength&quot;:40,
-                &quot;width&quot;:300,
-                &quot;max&quot;:0,
-                &quot;min&quot;:0,
-                &quot;requerid&quot;:true,
-                &quot;disable&quot;:false,
-                &quot;sequence&quot;:1,
-                &quot;id&quot;:&quot;1565165&quot;,
-                &quot;value&quot;:&quot;bb00eb36-1ec6-4e89-8183-8215735998e6&quot;
-             },
-             ...Continua
-          ],
-          &quot;id&quot;:&quot;981981&quot;
-       }
-       ...Continua
-    ],
-    &quot;button&quot;:[
-       {
-          &quot;method&quot;:&quot;post&quot;,
-          &quot;post&quot;:&quot;&quot;,
-          &quot;link&quot;:&quot;&quot;,
-          &quot;icon&quot;:&quot;bi bi-save&quot;,
-          &quot;text&quot;:&quot;&quot;,
-          &quot;type&quot;:&quot;button&quot;,
-          &quot;color&quot;:&quot;&quot;,
-          &quot;target&quot;:&quot;&quot;,
-          &quot;urlrelative&quot;:&quot;&quot;,
-          &quot;id&quot;:&quot;8418&quot;
-       }
-       ...Continua
-    ]
- }
-</code></pre>
-<p><strong>3° Nivel</strong>
-<img src="./assets/2023-09-15 23-40-52.png" style="width:100%;"></p>
-<p><strong>4° Nivel</strong></p>
-<pre><code class="language-json">{
-   &quot;codigo&quot;:&quot;bb00eb36-1ec6-4e89-8183-8215735998e6&quot;,
-   &quot;dataAbertura&quot;:&quot;2023-09-08&quot;,
-   &quot;totalServico&quot;:&quot;1115.88&quot;,
-   &quot;dataConclusao&quot;:&quot;2023-09-10&quot;,
-   &quot;status&quot;:&quot;false&quot;,
-   &quot;cliente&quot;:{
-      &quot;nome&quot;:&quot;Reginaldo&quot;,
-      &quot;telefone&quot;:&quot;Marinho&quot;,
-      &quot;email&quot;:&quot;reginaldo@hotmail.com&quot;,
-      &quot;endereco&quot;:{
-         &quot;logradouro&quot;:&quot;rua aurelio dias&quot;,
-         &quot;complemento&quot;:&quot;ap 39&quot;,
-         &quot;bairro&quot;:&quot;cecilia antunes&quot;,
-         &quot;cidade&quot;:&quot;jundiai&quot;,
-         &quot;estado&quot;:&quot;SP&quot;,
-         &quot;cep&quot;:&quot;13785-99&quot;,
-         &quot;pais&quot;:&quot;BR&quot;
-      }
-   },
-   &quot;itensServico&quot;:[
-      {
-         &quot;zzRowUi&quot;:0,
-         &quot;descricao&quot;:&quot;Tróca de óleo&quot;,
-         &quot;valorUnitario&quot;:&quot;600&quot;,
-         &quot;quantidade&quot;:&quot;1&quot;,
-         &quot;subtotal&quot;:&quot;600&quot;
-      },
-      {
-         &quot;zzRowUi&quot;:1,
-         &quot;descricao&quot;:&quot;Limpeza de Bico&quot;,
-         &quot;valorUnitario&quot;:&quot;45.88&quot;,
-         &quot;quantidade&quot;:&quot;1&quot;,
-         &quot;subtotal&quot;:&quot;45.88&quot;
-      },
-      {
-         &quot;zzRowUi&quot;:2,
-         &quot;descricao&quot;:&quot;Troca Pneu&quot;,
-         &quot;valorUnitario&quot;:&quot;320&quot;,
-         &quot;quantidade&quot;:&quot;4&quot;,
-         &quot;subtotal&quot;:&quot;1280&quot;
-      },
-      {
-         &quot;zzRowUi&quot;:3,
-         &quot;descricao&quot;:&quot;Alinhamento e Balanceamento&quot;,
-         &quot;valorUnitario&quot;:&quot;50&quot;,
-         &quot;quantidade&quot;:&quot;1&quot;,
-         &quot;subtotal&quot;:&quot;50&quot;
-      }
-   ],
-   &quot;tecnicoResponsavel&quot;:{
-      &quot;nome&quot;:&quot;Carlos Santos&quot;,
-      &quot;telefone&quot;:&quot;(11) 9876-5432&quot;,
-      &quot;email&quot;:&quot;carlos@email.com&quot;
-   },
-   &quot;pagamento&quot;:{
-      &quot;formaDePagamento&quot;:&quot;Cartão de Crédito&quot;,
-      &quot;valorTotalPago&quot;:&quot;350&quot;,
-      &quot;dataPagamento&quot;:&quot;2023-09-10&quot;
-   }
-}
-</code></pre>
 <p><strong>Após a criação e validação do 4° nível, o rucula-js estará pronto para consumir suas API's🚀</strong></p>
 
 

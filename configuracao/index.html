@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../crud/">
+        <link rel="prev" href="..">
       
       
-        <link rel="next" href="../Atalhos/">
+        <link rel="next" href="../crud/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Criando Botões e Eventos - rucula-js</title>
+        <title>Configuração - rucula-js</title>
       
     
     
@@ -66,6 +66,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#configuracao" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -98,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Criando Botões e Eventos
+              Configuração
             
           </span>
         </div>
@@ -204,9 +209,18 @@
       
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../configuracao/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -215,6 +229,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -223,20 +238,18 @@
       
   
   
-    
-  
   
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -250,7 +263,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Guia do Usuario
@@ -281,16 +294,9 @@
                 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../botoes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -299,7 +305,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -412,6 +417,8 @@
   
   
   
+    
+  
   
 </nav>
                   </div>
@@ -426,9 +433,25 @@
                   
 
 
-  <h1>Criando Botões e Eventos</h1>
+<h1 id="configuracao">Configuração</h1>
+<p>Atualmente o rucula-js está disponivel via pacote NPM</p>
+<p><code>npm i @reginaldo-marinho/rucula-js</code> ou <code>npm install @reginaldo-marinho/rucula-js</code></p>
+<p>certifique-se de ter o elemento pai que será usado pela sua janela</p>
+<pre><code class="language-html">&lt;div id=&quot;rucula-js&quot;&gt;
+&lt;/div&gt;
+</code></pre>
+<p>importe as funções <code>initGlobalConfiguration</code> e <code>createWindow</code></p>
+<pre><code class="language-ts">import { initGlobalConfiguration } from &quot;./src/global/GlobalConfig&quot;
+import { createWindow } from &quot;./src/window/WindowFactory&quot;
+</code></pre>
+<p>e chame-as no seu cliente</p>
+<pre><code class="language-ts">let janela:any = {}; // Configurações da Janela
+let configuracaoGlobal:any = {}; // Configurações globais
 
-
+initGlobalConfiguration(configuracaoGlobal)
+createWindow(janela,&quot;rucula-js&quot;)   
+</code></pre>
+<p>para a devida estilização, o css pode ser obtido em <code>./public/style.css</code>, caso queira saber mais sobre os estilos rucula-ls, acesse <a href="../style/">Guia do Desenvolvedo/Estilo</a>.</p>
 
 
 
