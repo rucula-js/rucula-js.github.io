@@ -628,24 +628,24 @@
 
 
 <h1 id="configuracao">Configuração</h1>
-<p>Atualmente o rucula-js está disponivel via pacote NPM</p>
+<p>Atualmente o rucula-js está dísponivel via NPM</p>
 <p><code>npm i @reginaldo-marinho/rucula-js</code> ou <code>npm install @reginaldo-marinho/rucula-js</code></p>
 <p>certifique-se de ter o elemento pai que será usado pela sua janela</p>
 <pre><code class="language-html">&lt;div id=&quot;rucula-js&quot;&gt;
 &lt;/div&gt;
 </code></pre>
-<p>importe as funções <code>initGlobalConfiguration</code> e <code>createWindow</code></p>
+<p>importe as funções <code>initGlobalConfiguration</code> e a classe <code>Rucula</code></p>
 <pre><code class="language-ts">import { initGlobalConfiguration } from &quot;./src/global/GlobalConfig&quot;
-import { createWindow } from &quot;./src/window/WindowFactory&quot;
+import { Rucula } from &quot;./src/Rucula&quot;
 </code></pre>
 <p>e chame-as no seu cliente</p>
 <pre><code class="language-ts">let janela:any = {}; // Configurações da Janela
 let configuracaoGlobal:any = {}; // Configurações globais
 
 initGlobalConfiguration(configuracaoGlobal)
-createWindow(janela,&quot;rucula-js&quot;)   
+let rucula = new Rucula(input as any,&quot;js&quot;);
 </code></pre>
-<p>para a devida estilização, o css pode ser obtido em <code>./public/style.css</code>, caso queira saber mais sobre os estilos rucula-ls, acesse <a href="../style/">Guia do Desenvolvedo/Estilo</a>.</p>
+<p>Para a devida estilização, o css pode ser obtido em <code>./public/style.css</code>, caso queira saber mais sobre os estilos rucula-ls, acesse <a href="../style/">Guia do Desenvolvedo/Estilo</a>.</p>
 
 
 

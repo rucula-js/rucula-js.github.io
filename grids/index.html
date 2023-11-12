@@ -694,10 +694,10 @@
 
 
 <h1 id="os-grids">Os Grids</h1>
-<p>Para se obter a melhor experiência ao trabalhar com grid, o tabular foi a escolha perfeita. Com um rico conjunto de configurações e desempenho, o tabulator se mostra  efetivo ao mostrar suas funcionalides atreladas ao rucula-js. Veja seu site oficial em <a href="http://tabulator.info/">tabulator.info</a>.</p>
+<p>Para se obter a melhor experiência ao trabalhar com grid, o tabular foi a escolha perfeita. Com um rico conjunto de configurações e desempenho, o tabulator se mostra  efetivo ao mostrar suas funcionalides atreladas ao rucula-js. Você pode saber mais sobre o tabulator em <a href="http://tabulator.info/">tabulator.info</a>.</p>
 <h2 id="configurando-as-colunas-do-grid">Configurando as Colunas do Grid</h2>
-<p>Ao iniciar uma janela no  rucula-js, uma  das etapas que ocorrem é a consulta e preenchimento dos dados iniciais ao grid esquerdo da janela, essa consulta se dá pela configuração do <a href="../endPoints/">ponto de entrada</a> <code>get-all-grid</code>, esse é um identificador reservado especialmente para o grid que é solicitado no array de pontos de entrada no processo de construção do grid. Além  desse identificador reservado, também temos o <code>get-by-id</code>, que falaremos mais à frente.</p>
-<p>Mas voltando ao ponto prícipal no momento que é as configurações das colunas, quando iniciado a rotina de criação do grid, o rucula-js vai querer saber a configuração desejada para a janela em evidência. Para isso durante a criação da configuração da janela, utilizamos para informar a configuração das colunas o objeto <code>columnsGrid</code>, esse objeto tem o objetivo de guardar o nome da propriedade que existirá durante o termino dá consulta <code>get-all-grid</code> e o nome que será representado para o usuário. vejamos abaixo um exemplo:</p>
+<p>Ao iniciar uma janela no rucula-js, uma das etapas que ocorrem é a consulta e preenchimento dos dados iniciais ao grid esquerdo da janela, essa consulta se dá pela configuração do <a href="../endPoints/">ponto de entrada</a> <code>get-all-grid</code>, esse é um identificador reservado especialmente para o grid que é solicitado no array de pontos de entrada no processo de construção do grid. Além  desse identificador reservado, também temos o <code>get-by-id</code>, que falaremos mais à frente.</p>
+<p>Mas voltando ao ponto prícipal, configurações das colunas, quando iniciado a rotina de criação do grid, o rucula-js vai querer saber a configuração desejada para a janela em evidência. Para isso durante a criação da configuração da janela, utilizamos para informar a configuração das colunas o objeto <code>columnsGrid</code>, esse objeto tem o objetivo de guardar o nome da propriedade que existirá durante o termino dá consulta <code>get-all-grid</code> e o nome que será representado para o usuário. vejamos abaixo um exemplo:</p>
 <pre><code class="language-json">&quot;columnsGrid&quot;:[ //objeto de configuração
     {
         &quot;field&quot;:&quot;codigo&quot;, // nome da propridade que exisitrá ao termino da consulta
@@ -740,7 +740,7 @@
     ],
 </code></pre>
 <p>Caso não entenda porque <code>get-all-grid</code> e <code>get-by-id</code>, mesmo quase que vazios são relevantes, veja <a href="url.md">URL's</a></p>
-<p><strong>Encontrou algum erro? Tem sugestão de melhoria? Crie um relatório de bug em <a href="https://github.com/rucula-js/rucula-js/issues">rucula-js</a></strong></p>
+<p><strong>Encontrou algum erro? Sugestão de melhorias? Crie um relatório de bug em <a href="https://github.com/rucula-js/rucula-js/issues">rucula-js</a></strong></p>
 
 
 

@@ -683,55 +683,26 @@
 
 <h1 id="os-objetos">Os Objetos</h1>
 <h2 id="amarracao-dos-objetos">Amarração dos Objetos</h2>
-<p>No rucula, todos os objetos são criados isoladamente um dos outros, isso facilita o desenvolvimento e manutenção da ferramenta, além de facilitar no gerenciamento da obtenção e inserção de dados. Para que cada objeto filho fique dentro do seu respectivo pai, é necessário fazer a amarração entre objetos hierarquicamente, isso garante que quando um objeto filho for passado para seu pai, ele já tenha recebido seus possiveis filhos.</p>
+<p>No rucula, todos os objetos são criados isoladamente um dos outros, isso facilita o desenvolvimento e manutenção da as propriedades que são criadas dinâmicamente. Além de facilitar no gerenciamento da obtenção e inserção de dados. Para que cada objeto filho fique dentro do seu respectivo pai, é necessário fazer a amarração entre objetos hierarquicamente, isso garante que quando um objeto filho for passado para seu pai, ele já tenha recebido seus possiveis filhos.</p>
 <pre><code class="language-json">{
     &quot;joinChield&quot;:[
-        {
-          &quot;key&quot;:&quot;ordem_de_servico&quot;,
-          &quot;value&quot;:&quot;cliente&quot;
-       },
-       {
-          &quot;key&quot;:&quot;cliente&quot;,
-          &quot;value&quot;:&quot;endereco&quot;
-       },
-       {
-          &quot;key&quot;:&quot;ordem_de_servico&quot;,
-          &quot;value&quot;:&quot;itens_servico&quot;
-       },
-       {
-          &quot;key&quot;:&quot;ordem_de_servico&quot;,
-          &quot;value&quot;:&quot;tecnico_responsavel&quot;
-       },
-       {
-          &quot;key&quot;:&quot;ordem_de_servico&quot;,
-          &quot;value&quot;:&quot;pagamento&quot;
-       }
-    ],
+
+          &quot;ordem_de_servico.cliente&quot;,
+          &quot;cliente.endereco&quot;,
+          &quot;ordem_de_servico.itens_servico&quot;,
+          &quot;ordem_de_servico.tecnico_responsavel&quot;,
+          &quot;ordem_de_servico.pagamento&quot;
+    ]
 }
 </code></pre>
-<p>No exemplo acima haveria um erro, porque a hierarquia não está sendo respeitada, no backgroup o rucula lê o  array da forma em que ele foi especificado, logo, teriamos <code>ordem_de_servico:cliente</code> e quando <code>cliente:endereco</code> fosse informado, haveria um erro pois o rucula não iria encontrar o objeto cliente.</p>
+<p>No exemplo acima haveria um erro, porque a hierarquia não está sendo respeitada, no background o rucula lê o  array da forma em que ele foi especificado, logo, teriamos <code>ordem_de_servico:cliente</code> e quando <code>cliente:endereco</code> fosse informado, haveria um erro pois o rucula não iria encontrar o objeto cliente.</p>
 <pre><code class="language-json">{
     &quot;joinChield&quot;:[
-       {
-          &quot;key&quot;:&quot;cliente&quot;,
-          &quot;value&quot;:&quot;endereco&quot;
-       },
-       {
-          &quot;key&quot;:&quot;ordem_de_servico&quot;,
-          &quot;value&quot;:&quot;cliente&quot;
-       },
-       {
-          &quot;key&quot;:&quot;ordem_de_servico&quot;,
-          &quot;value&quot;:&quot;itens_servico&quot;
-       },
-       {
-          &quot;key&quot;:&quot;ordem_de_servico&quot;,
-          &quot;value&quot;:&quot;tecnico_responsavel&quot;
-       },
-       {
-          &quot;key&quot;:&quot;ordem_de_servico&quot;,
-          &quot;value&quot;:&quot;pagamento&quot;
-       }
+      &quot;cliente.endereco&quot;,
+      &quot;ordem_de_servico.cliente&quot;,
+      &quot;ordem_de_servico.itens_servico&quot;,
+      &quot;ordem_de_servico.tecnico_responsavel&quot;,
+      &quot;ordem_de_servico.pagamento&quot;
     ],
 }
 </code></pre>
