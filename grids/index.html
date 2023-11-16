@@ -711,7 +711,9 @@
 </code></pre>
 <h2 id="configurando-os-parametros-do-grid">Configurando os Parâmetros do Grid</h2>
 <p>Após a criação do grid, o rucula-js da inicio a escuta de eventos <code>click</code> no nível de linha, isso é necessário porque como qualquer outra aplicação, ao saber a linha desejada pelo usuário, uma nova solicitação no nível de linha deve ser feita ao backend, o que resulta em um objeto completo que é preenchido corretamente na interface do usuário. Esses eventos dizem ao rucula-js para executar o <a href="../endPoints/">ponto de entrada</a>, cuja identificação é <code>get-by-id</code>.</p>
+<blockquote>
 <p><strong>Observação</strong>: Note que  <code>get-all-grid</code> e <code>get-by-id</code> são reservados exclusivamente para o caso do grid, e que devem ser configuradas de modo que faça sentido para cada janela.</p>
+</blockquote>
 <pre><code class="language-json">&quot;endPoints&quot;:[
       {
          &quot;name&quot;:&quot;create-os&quot;, // Identificador qualquer
@@ -741,6 +743,18 @@
 </code></pre>
 <p>Caso não entenda porque <code>get-all-grid</code> e <code>get-by-id</code>, mesmo quase que vazios são relevantes, veja <a href="url.md">URL's</a></p>
 <p><strong>Encontrou algum erro? Sugestão de melhorias? Crie um relatório de bug em <a href="https://github.com/rucula-js/rucula-js/issues">rucula-js</a></strong></p>
+<table>
+<thead>
+<tr>
+<th>Contribuidores</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/reginaldo-marinho"><img width="45px" height="45px" style="border-radius:30px" alt="reginalso-marinho" title="TheLarkInn" src="https://avatars.githubusercontent.com/u/60780631?v=4"></a></td>
+</tr>
+</tbody>
+</table>
 
 
 
