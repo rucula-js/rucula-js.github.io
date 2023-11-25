@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.8">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.12">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.4b4a2bd9.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.fad675c6.min.css">
       
       
 
@@ -373,22 +373,52 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#os-tipos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Os Tipos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Os Tipos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configurando-os-tipos-com-as-duas-formais-possiveis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configurando os Tipos com as Duas Formais Possíveis
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#tabela-de-propriedades-comuns-para-todos-os-tipos" class="md-nav__link">
-    Tabela de Propriedades Comuns para Todos os Tipos
+    <span class="md-ellipsis">
+      Tabela de Propriedades Comuns para Todos os Tipos
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#complemento-da-tabela-para-tipos-especificos" class="md-nav__link">
-    Complemento da tabela para tipos especificos
+    <span class="md-ellipsis">
+      Complemento da tabela para tipos especificos
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#exempos-de-casos-de-uso" class="md-nav__link">
-    Exempos de Casos de Uso
+    <span class="md-ellipsis">
+      Exempos de Casos de Uso
+    </span>
   </a>
   
 </li>
@@ -674,22 +704,52 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#os-tipos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Os Tipos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Os Tipos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configurando-os-tipos-com-as-duas-formais-possiveis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configurando os Tipos com as Duas Formais Possíveis
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#tabela-de-propriedades-comuns-para-todos-os-tipos" class="md-nav__link">
-    Tabela de Propriedades Comuns para Todos os Tipos
+    <span class="md-ellipsis">
+      Tabela de Propriedades Comuns para Todos os Tipos
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#complemento-da-tabela-para-tipos-especificos" class="md-nav__link">
-    Complemento da tabela para tipos especificos
+    <span class="md-ellipsis">
+      Complemento da tabela para tipos especificos
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#exempos-de-casos-de-uso" class="md-nav__link">
-    Exempos de Casos de Uso
+    <span class="md-ellipsis">
+      Exempos de Casos de Uso
+    </span>
   </a>
   
 </li>
@@ -710,7 +770,11 @@
 
 
 <h1 id="configuracoes-de-campos">Configurações de Campos</h1>
-<p>As configurações de campos podem variar, cada campo pode conter uma particulariade especifica. Abaixo, listaremos os tipos de campos e suas respectivas particularidades.</p>
+<p>As configurações de campos representam o tipo gráfico de componente que será criado e também, para alguns casos, a representação de do tipo saída. Os tipos de saída é a configuração para casos em que a representação gráfica é diferente de uma caixa de texto normal, campos do tipo 'checkbox', 'radio' e 'select', que tem representações que representam um tipo, mas que durante sua resolução, o tipo deve ser convertido para um caso especial.</p>
+<h2 id="os-tipos">Os Tipos</h2>
+<p>O rucula-js presta suporte para uma quantidade de compontes gráficos e tipos, na maioria dos casos os inputs do tipo <code>text</code> resolverão o problema, entretanto, haverá cenarios, onde outro tipo seja mais conveniente.</p>
+<h3 id="configurando-os-tipos-com-as-duas-formais-possiveis">Configurando os Tipos com as Duas Formais Possíveis</h3>
+<p>A configuração de tipo requer duas sintaxe diferentes, em primerio lugar utilizamos a sintaxe de tipo <code>string</code>, observe: <code>type: 'text'</code>. Em segundo lugar, utilizamos a sintaxe de tipo <code>string[2]</code>, isso significa que o tipo passado será um array com duas casas do tipo <code>string</code>, vejamos: <code>type: ['checkbox','bool']</code>.</p>
 <h2 id="tabela-de-propriedades-comuns-para-todos-os-tipos">Tabela de Propriedades Comuns para Todos os Tipos</h2>
 <table>
 <thead>
@@ -770,11 +834,6 @@
 <td><code>sequence</code></td>
 <td>✅</td>
 <td>Esse campo controla a ordem dos campos criados em tela</td>
-</tr>
-<tr>
-<td><code>id</code></td>
-<td>✅</td>
-<td>Identificador unido do campo</td>
 </tr>
 <tr>
 <td><code>value</code></td>
@@ -940,7 +999,7 @@
     <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.81fa17fe.min.js"></script>
+      <script src="../assets/javascripts/bundle.6c14ae12.min.js"></script>
       
     
   </body>
