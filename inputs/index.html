@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.12">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.14">
     
     
       
@@ -191,6 +191,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href=".." class="md-nav__link">
         
@@ -207,6 +208,7 @@
     
       
       
+  
   
   
   
@@ -229,6 +231,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../hello-world/" class="md-nav__link">
         
@@ -248,6 +251,7 @@
   
   
     
+  
   
   
     
@@ -286,6 +290,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../janelas/" class="md-nav__link">
         
@@ -303,6 +308,7 @@
             
               
                 
+  
   
   
   
@@ -326,6 +332,7 @@
   
   
     
+  
   
   
     <li class="md-nav__item md-nav__item--active">
@@ -397,27 +404,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#tabela-de-propriedades-comuns-para-todos-os-tipos" class="md-nav__link">
+  <a href="#groupformat" class="md-nav__link">
     <span class="md-ellipsis">
-      Tabela de Propriedades Comuns para Todos os Tipos
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#complemento-da-tabela-para-tipos-especificos" class="md-nav__link">
-    <span class="md-ellipsis">
-      Complemento da tabela para tipos especificos
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#exempos-de-casos-de-uso" class="md-nav__link">
-    <span class="md-ellipsis">
-      Exempos de Casos de Uso
+      groupFormat
     </span>
   </a>
   
@@ -434,6 +423,7 @@
             
               
                 
+  
   
   
   
@@ -454,6 +444,7 @@
             
               
                 
+  
   
   
   
@@ -481,6 +472,7 @@
     
       
       
+  
   
   
   
@@ -520,6 +512,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../crud/" class="md-nav__link">
         
@@ -540,6 +533,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../botoes/" class="md-nav__link">
         
@@ -557,6 +551,7 @@
             
               
                 
+  
   
   
   
@@ -587,6 +582,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../grids/" class="md-nav__link">
         
@@ -603,6 +599,7 @@
     
       
       
+  
   
   
   
@@ -625,6 +622,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../endPoints/" class="md-nav__link">
         
@@ -644,6 +642,7 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../formulas/" class="md-nav__link">
         
@@ -660,6 +659,7 @@
     
       
       
+  
   
   
   
@@ -728,27 +728,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#tabela-de-propriedades-comuns-para-todos-os-tipos" class="md-nav__link">
+  <a href="#groupformat" class="md-nav__link">
     <span class="md-ellipsis">
-      Tabela de Propriedades Comuns para Todos os Tipos
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#complemento-da-tabela-para-tipos-especificos" class="md-nav__link">
-    <span class="md-ellipsis">
-      Complemento da tabela para tipos especificos
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#exempos-de-casos-de-uso" class="md-nav__link">
-    <span class="md-ellipsis">
-      Exempos de Casos de Uso
+      groupFormat
     </span>
   </a>
   
@@ -770,182 +752,16 @@
 
 
 <h1 id="configuracoes-de-campos">Configurações de Campos</h1>
-<p>As configurações de campos representam o tipo gráfico de componente que será criado e também, para alguns casos, a representação de do tipo saída. Os tipos de saída é a configuração para casos em que a representação gráfica é diferente de uma caixa de texto normal, campos do tipo 'checkbox', 'radio' e 'select', que tem representações que representam um tipo, mas que durante sua resolução, o tipo deve ser convertido para um caso especial.</p>
+<p>As configurações de campos representam o tipo gráfico de componente que será criado e também, para alguns casos, a representação de do tipo saída. </p>
+<blockquote>
+<p>Os tipos de saída são configurados para casos em que a representação gráfica deve retornar um tipo diferente no processo de manipulação do mesmo. Campos do tipo 'checkbox', 'radio' e 'select',  tem representaçõesgráficas de um tipo, mas  durante sua resolução, o tipo deve ser convertido para um caso especial.</p>
+</blockquote>
 <h2 id="os-tipos">Os Tipos</h2>
 <p>O rucula-js presta suporte para uma quantidade de compontes gráficos e tipos, na maioria dos casos os inputs do tipo <code>text</code> resolverão o problema, entretanto, haverá cenarios, onde outro tipo seja mais conveniente.</p>
 <h3 id="configurando-os-tipos-com-as-duas-formais-possiveis">Configurando os Tipos com as Duas Formais Possíveis</h3>
 <p>A configuração de tipo requer duas sintaxe diferentes, em primerio lugar utilizamos a sintaxe de tipo <code>string</code>, observe: <code>type: 'text'</code>. Em segundo lugar, utilizamos a sintaxe de tipo <code>string[2]</code>, isso significa que o tipo passado será um array com duas casas do tipo <code>string</code>, vejamos: <code>type: ['checkbox','bool']</code>.</p>
-<h2 id="tabela-de-propriedades-comuns-para-todos-os-tipos">Tabela de Propriedades Comuns para Todos os Tipos</h2>
-<table>
-<thead>
-<tr>
-<th>Propriedade</th>
-<th>Obrigatório?</th>
-<th>Descrição</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>propertDto</code></td>
-<td>✅</td>
-<td>representa o nome da propriedade que devera ser criada no objeto desejado</td>
-</tr>
-<tr>
-<td><code>description</code></td>
-<td>✅</td>
-<td>Nome do campo que aparecerá na tela</td>
-</tr>
-<tr>
-<td><code>information</code></td>
-<td></td>
-<td>Esse campo ajuda a colocar uma informação adicional ao campo. Para visualizar use o atalho help <code>Ctrl+h</code></td>
-</tr>
-<tr>
-<td><code>type</code></td>
-<td>✅</td>
-<td>Representa o tipo do campo que será utilizado na interface de usuário</td>
-</tr>
-<tr>
-<td><code>maxLength</code></td>
-<td>✅</td>
-<td>Tamanho máximo de caracteres permitidos</td>
-</tr>
-<tr>
-<td><code>max</code></td>
-<td></td>
-<td>Numero máximo permitido</td>
-</tr>
-<tr>
-<td><code>min</code></td>
-<td></td>
-<td>Número minimo permido</td>
-</tr>
-<tr>
-<td><code>requerid</code></td>
-<td>✅</td>
-<td>Indica obrigatoriedade no campo</td>
-</tr>
-<tr>
-<td><code>disable</code></td>
-<td>✅</td>
-<td>Indica que o campo pode estar desabilitado para uso</td>
-</tr>
-<tr>
-<td><code>sequence</code></td>
-<td>✅</td>
-<td>Esse campo controla a ordem dos campos criados em tela</td>
-</tr>
-<tr>
-<td><code>value</code></td>
-<td></td>
-<td>Representa o valor inicial do campo, podendo ser omitido pela rotina caso o mesmo represente uma formula. Para saber mais veja <a href="">Formulas</a>.</td>
-</tr>
-</tbody>
-</table>
-<p>Além das opções acima, existem casos em que o tipo do campo requer uma particularidade especifica.</p>
-<h2 id="complemento-da-tabela-para-tipos-especificos">Complemento da tabela para tipos especificos</h2>
-<table>
-<thead>
-<tr>
-<th>Propriedade</th>
-<th>Obrigatório?</th>
-<th>Descrição</th>
-<th>Exemplo de Tipo</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>checkbox</code></td>
-<td></td>
-<td>para tipo de campo<code>checkbox</code>, representa um array de chave e valor</td>
-<td><code>{"on":"2","off":"0"}</code></td>
-</tr>
-<tr>
-<td><code>combo</code></td>
-<td></td>
-<td>para o tipo <code>select</code>,  representa um array de chave e valor</td>
-<td><code>{"value": "text", "representation": "text"},{"value": "number","representation": "number"},</code></td>
-</tr>
-</tbody>
-</table>
-<h2 id="exempos-de-casos-de-uso">Exempos de Casos de Uso</h2>
-<ul>
-<li>text</li>
-<li>number</li>
-<li>date</li>
-</ul>
-<pre><code class="language-javascript">{
-    &quot;propertDto&quot;: &quot;numero&quot;,
-    &quot;description&quot;: &quot;Numero&quot;,
-    &quot;information&quot;: &quot;&quot;,
-    &quot;type&quot;: &quot;text&quot;,
-    &quot;maxLength&quot;: 32,
-    &quot;max&quot;: 0,
-    &quot;min&quot;: 0,
-    &quot;requerid&quot;: true,
-    &quot;disable&quot;: false,
-    &quot;sequence&quot;: 1,
-    &quot;id&quot;: &quot;1565165&quot;,
-    &quot;value&quot;:&quot;b242f3b3-aa33-4d0e-91c0-746b0c6f0afe&quot;
-}
-</code></pre>
-<ul>
-<li>checkbox</li>
-</ul>
-<pre><code class="language-javascript">{
-   &quot;propertDto&quot;: &quot;concluida&quot;,
-    &quot;description&quot;: &quot;Concluida&quot;,
-    &quot;information&quot;: null,
-    &quot;type&quot;: &quot;checkbox&quot;,
-    &quot;checkbox&quot;:{&quot;on&quot;:&quot;2&quot;,&quot;off&quot;:&quot;0&quot;},
-    &quot;maxLength&quot;: 20,
-    &quot;max&quot;: 0,
-    &quot;min&quot;: 0,
-    &quot;requerid&quot;: true,
-    &quot;disable&quot;: false,
-    &quot;sequence&quot;: 3,
-    &quot;id&quot;: &quot;iscnscoin&quot;
-}
-</code></pre>
-<ul>
-<li>select</li>
-</ul>
-<pre><code class="language-javascript">{
-    &quot;id&quot;: &quot;ewfffe&quot;,
-    &quot;propertDto&quot;: &quot;type&quot;,
-    &quot;description&quot;: &quot;type&quot;,
-    &quot;information&quot;: null,
-    &quot;type&quot;: &quot;select&quot;,
-    &quot;combo&quot;: [
-    {
-        &quot;value&quot;: &quot;text&quot;,
-        &quot;representation&quot;: &quot;text&quot;
-    },
-    {
-        &quot;value&quot;: &quot;number&quot;,
-        &quot;representation&quot;: &quot;number&quot;
-    },
-    {
-        &quot;value&quot;: &quot;select&quot;,
-        &quot;representation&quot;: &quot;select&quot;
-    },
-    {
-        &quot;value&quot;: &quot;check&quot;,
-        &quot;representation&quot;: &quot;check&quot;
-    },
-    {
-        &quot;value&quot;: &quot;radio&quot;,
-        &quot;representation&quot;: &quot;radio&quot;
-    }
-    ],
-    &quot;maxLength&quot;: 10,
-    &quot;max&quot;: 0,
-    &quot;min&quot;: 0,
-    &quot;requerid&quot;: true,
-    &quot;disable&quot;: false,
-    &quot;sequence&quot;: 5
-}
-</code></pre>
+<h2 id="groupformat">groupFormat</h2>
+<p><code>groupFormat</code> é a propriedade resposável por manipular o label e o component que é criado em tela, ele indica o posicionamento do label em relação ao componente que será criado. <strong>Por padrão o  label é criado em cima do component desejado</strong>, mas essa opção pode mudar se especificado <code>down</code>, <code>left</code> ou <code>rigth</code>.</p>
 <table>
 <thead>
 <tr>
@@ -999,7 +815,7 @@
     <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.6c14ae12.min.js"></script>
+      <script src="../assets/javascripts/bundle.cd18aaf1.min.js"></script>
       
     
   </body>
