@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../como-configurar/">
+        <link rel="prev" href="../o-que-e-o-rucula-js/">
       
       
-        <link rel="next" href="../../compreendendo/janelas/">
+        <link rel="next" href="../como-configurar/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#itens-relacionados" class="md-skip">
+        <a href="#hello-world" class="md-skip">
           Skip to content
         </a>
       
@@ -207,7 +207,7 @@
         
   
   <span class="md-ellipsis">
-    Introdução
+    Inicio
   </span>
   
 
@@ -278,27 +278,6 @@
                 
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../como-configurar/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Como Configurar?
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -307,6 +286,8 @@
       
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
+      
+        
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
@@ -335,6 +316,8 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
+  
+    
   
   
     <label class="md-nav__title" for="__toc">
@@ -365,6 +348,27 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../como-configurar/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configurando?
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -629,7 +633,7 @@
             
   
   <span class="md-ellipsis">
-    Desenvolvendo
+    Configurações Globais
   </span>
   
 
@@ -638,90 +642,6 @@
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
-            <span class="md-nav__icon md-icon"></span>
-            Desenvolvendo
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../desenvolvendo/roadmap/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Roadmap
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../desenvolvendo/janelas/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Criando a Janela
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
-        
-          
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    Configurações Globais
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Configurações Globais
           </label>
@@ -811,10 +731,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -825,8 +745,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Api
           </label>
@@ -940,6 +860,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -980,45 +902,17 @@
                   
 
 
-  <h1>Hello World</h1>
-
-<p>Após a <a href="configuracao.md">configuração inicial</a>, é horá de iniciarmos uma janela <code>crud</code> bem simples. O intuito desse capítulo é fornecer uma ideia inicial do rucula-js.</p>
-<p><strong>Nota: Não se preocupe com a configuração da janela, antente-se somente em ver o resultado final. Falaremos sobre cada configuração posteriormente</strong></p>
-<pre><code class="language-js">    let confHello = {
-    &quot;name&quot;: &quot;Hello World&quot;,
-    &quot;pathController&quot;: &quot;/HelloWorld&quot;,
-    &quot;type&quot;: &quot;crud&quot;,
-    &quot;messageHome&quot;: &quot;Hello  World&quot;,
-    &quot;iconHome&quot;: &quot;bi-rocket-takeoff&quot;,
-    &quot;this&quot;: &quot;hello&quot;,
-    &quot;frames&quot;: [
-        {
-        &quot;name&quot;: &quot;Header&quot;,
-        &quot;objectDto&quot;: &quot;hello&quot;,
-        &quot;sequence&quot;: 0,
-        &quot;fields&quot;: [
-            {
-            &quot;propertDto&quot;: &quot;codigo&quot;,
-            &quot;description&quot;: &quot;Código&quot;,
-            &quot;maxLength&quot;: 40,
-            &quot;width&quot;: 300,
-            &quot;sequence&quot;: 1,
-            &quot;value&quot;:&quot;Hello world&quot;
-            }
-        ]
-        }
-    ],
-    &quot;joinChield&quot;: [
-    ],
-    &quot;endPoints&quot;: [
-    ]
-    }
-</code></pre>
-<p>Ao criar a configuração da janela, podemos passa-la para a nossa classe Rucula, a partir disso o rucula-js criará automáticamente uma interface em modelo <code>crud</code> pronta para uso.</p>
-<pre><code class="language-js">    let rucula = new Rucula(confHello,&quot;js&quot;);
-</code></pre>
+<h1 id="hello-world">Hello World</h1>
+<p>Para ver um exemplo do rucula-js você pode utilizar o <a href="https://stackblitz.com/edit/vitejs-vite-cd4kxf?file=index.html&amp;terminal=dev">link stackblitz</a>
+ ou se preferir, copie e cole o código do <a href="https://github.com/rucula-js/rucula-js/blob/main/docs/docs/exemples/hello-world.html">github</a>.</p>
 <p><br></p>
 <h5 id="itens-relacionados">Itens Relacionados</h5>
+<p><a href="https://github.com/rucula-js/rucula-js">⭐ Visite o projeto rucula-js ⭐</a></p>
+<div class="rucula-info">
+    <h5>Nos ajude a melhorar o rucula-js.</h5>
+    Encontrou um erro? Tem alguma sugestão?  <a href="https://github.com/rucula-js/rucula-js/issues">Abra um novo problema</a><br>    
+</div>
+
 <h5 id="contribuidores">Contribuidores</h5>
 <table>
 <thead>
@@ -1032,16 +926,6 @@
 </tr>
 </tbody>
 </table>
-<p><a href="https://github.com/rucula-js/rucula-js">Contamos com a sua estrela 😀 - Visite o projeto rucula-js ⭐</a></p>
-<div style="
-    border: 2px solid #ff7906;
-    border-radius: 8PX;
-    padding: 8px;
-    background-color: #ffeaea;
-    ">
-    <h5>Nos ajude a melhorar o rucula-js.</h5>
-    Encontrou um erro? Tem alguma sugestão?  <a href="https://github.com/rucula-js/rucula-js/issues">Abra um novo problema</a><br>    
-</div>
 
 
 
