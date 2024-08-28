@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.24">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.33">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.6543a935.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.3cba04c6.min.css">
       
       
 
@@ -147,7 +147,7 @@
       
     </form>
     <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
             Initializing search
@@ -441,27 +441,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#path-controller" class="md-nav__link">
+  <a href="#path-relativo" class="md-nav__link">
     <span class="md-ellipsis">
-      Path Controller
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#path-relativo-no-contexto-de-mesmo-ambiente" class="md-nav__link">
-    <span class="md-ellipsis">
-      Path Relativo no Contexto de Mesmo Ambiente
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#path-absoluto-ou-nova-url" class="md-nav__link">
-    <span class="md-ellipsis">
-      Path Absoluto ou nova URL
+      Path Relativo
     </span>
   </a>
   
@@ -484,7 +466,21 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="A Sintaxe dos Parametros">
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#path-absoluto-ou-nova-url" class="md-nav__link">
+    <span class="md-ellipsis">
+      Path Absoluto ou nova URL
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Path Absoluto ou nova URL">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -502,11 +498,6 @@
       Contribuidores
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -861,27 +852,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#path-controller" class="md-nav__link">
+  <a href="#path-relativo" class="md-nav__link">
     <span class="md-ellipsis">
-      Path Controller
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#path-relativo-no-contexto-de-mesmo-ambiente" class="md-nav__link">
-    <span class="md-ellipsis">
-      Path Relativo no Contexto de Mesmo Ambiente
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#path-absoluto-ou-nova-url" class="md-nav__link">
-    <span class="md-ellipsis">
-      Path Absoluto ou nova URL
+      Path Relativo
     </span>
   </a>
   
@@ -904,7 +877,21 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="A Sintaxe dos Parametros">
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#path-absoluto-ou-nova-url" class="md-nav__link">
+    <span class="md-ellipsis">
+      Path Absoluto ou nova URL
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Path Absoluto ou nova URL">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -929,11 +916,6 @@
     </nav>
   
 </li>
-        
-      </ul>
-    </nav>
-  
-</li>
       
     </ul>
   
@@ -951,17 +933,13 @@
 
 
 <h1 id="urls">Url's</h1>
-<p>No rucula-js a criação de url's é um processo dinâmico, que ocorre a partir da leitura de algumas propriedades presentes na configuração global, na janela e nos botões.</p>
-<pre><code class="language-js">{
-    name: &quot;Clientes&quot;,
-    pathController: &quot;Cliente&quot;, 👈
-    type: &quot;crud&quot;,
-    grid:false,
-    frames: []
-    ...
-}
-</code></pre>
-<pre><code class="language-js">environments:[
+<p>No rucula-js a criação de url's é feita seguindo regras de prioridade. Isso ocorre porque o rucula tenta resolver dinamicamente grante parte das url's e com base no que está configurado na janela.</p>
+<blockquote>
+<p>Também podemos usar rucula.url() para gerenciar manualmente.</p>
+</blockquote>
+<p>Atualmente o rucula tenta obter em dois locais a base para criação das url's, primeiramente ele tentará verificar o ambiente atual, depois tentará verificar se há configurão vinculada ao botão.</p>
+<pre><code class="language-js">// configuração do ambiente
+environments:[
     {
         env:&quot;development&quot;,
         hostname:&quot;http://localhost&quot;, 👈
@@ -969,45 +947,40 @@
     }
 ]
 </code></pre>
-<pre><code class="language-js">{
+<pre><code class="language-js">// configuração da url(pode estar ou não vinculada ao botão)
+{
     URL:{
-        absolute:string 👈
-        relative:string, 👈
-        params:string 👈
+        absolute:'www.novo.com/images?code={os.codigoImagem}' 👈
+        relative:'OdemDeServico', 👈
+        params:'?numero={os.codOS}' 👈
     }
 }
 </code></pre>
 <h2 id="a-url-principal">A URL Principal</h2>
-<p>A URL principal usada por todas as janelas é criada a partir da configuração global <code>environments</code>, nela existe uma array de ambientes que dão suporte à todas as janelas.</p>
-<p>Durante o processo de criação de url, o ruculs-js cria a URL principa padrão na seguinte forma <code>http://localhost:5016</code></p>
-<h2 id="path-controller">Path Controller</h2>
-<p>Normalmente temos janelas que fazem referência à um único caminho path, por exemplo, ao criar uma janela chamada <code>Ordem de Servico</code> é provável que o path de serviço utilizado pela janela seja <code>/OrdemServico</code> ou algo muito semelhante, o fato é que a janela terá os serviços que utiliza dentro de <code>/OrdemServico</code>. Complementado, podemos utilizar a propriedade <code>button.URL.params</code> para complementar a URL, como em casos <strong>GET</strong>.</p>
-<p>Para esse caso a url seria criada utilizando a URL de domínio do ambiente atual, tendo o apoio do exemplo acima, teriamos uma url completa na seguinte forma: <code>http://localhost:5016/OrdemServico</code></p>
-<h2 id="path-relativo-no-contexto-de-mesmo-ambiente">Path Relativo no Contexto de Mesmo Ambiente</h2>
-<p>O path relativo de mesmo ambiente traz maior flexibilidade ao se fazer referencias a outros path's que estão presentes no mesmo ambiente.</p>
-<p>Isso ocorre porque se informado em <code>button.URL.relative</code>, <code>pathController</code> será ignorado, o que garante ao desenvolvedor criar variações de URL's ao ambiente atual.</p>
-<p>O Path Relativo tem o mesmo peso do <code>pathController</code>, entretanto, substitui o <code>pathController</code>. </p>
-<h2 id="path-absoluto-ou-nova-url">Path Absoluto ou nova URL</h2>
-<p>Nesse modalidade de criação, toda configuração criada é ignorada e uma nova URL é criada. Para isso utilize a propriedade  <code>button.URL.absolute</code>.</p>
-<p>O objetivo aqui é criar URL's que façam por exemplo referência a aplicações terceiras.</p>
+<p>A URL principal é criada a partir da configuração global <code>environments</code>, nela existe uma array de ambientes que dão suporte à todas as janelas.</p>
+<p>Durante o processo de criação de url, o ruculs-js cria a URL principal padrão na seguinte forma <code>http://localhost:5016</code>.</p>
+<blockquote>
+<p>Nota: Ela poderá ser substituida por outra url principal se <code>URL.absolute</code> for informada. De qualquer forma sempre haverá uma url principal. </p>
+</blockquote>
+<h2 id="path-relativo">Path Relativo</h2>
+<p>O path relativo é um complemento da url principal, ao ser informado o rucula concatena e retorna a nova url.</p>
+<p><code>http://localhost:5016/OdemDeServico</code></p>
 <h2 id="os-parametros-de-url">Os Parametros de URL</h2>
-<p>Existem casos em que as URL's devem ser criadas com parametros, para esses casos o rucula-js lê as propriedade presente em <code>button.URL</code> e resolve a URL.</p>
-<p>Com a url quase pronta  <code>http://localhost:5016/OrdemServico</code>, podemos passar os parametros em duas formas: </p>
+<p>Existem casos em que as URL's devem ser criadas com parametros, para esses casos o rucula-js lê as propriedade presente em <code>URL.params</code> e resolve a URL.</p>
+<p><code>http://localhost:5016/OdemDeServico/?numero=2e82e892e</code></p>
 <h3 id="a-sintaxe-dos-parametros">A Sintaxe dos Parametros</h3>
 <p>Para que a devida substituição entre propriedade do objeto seja feita, utilizamos duas sintaxes</p>
 <ol>
-<li><code>parametro={aliasFrame.namePropert}</code>. Caso tenha mais de um parametro, teriamos algo como <code>parametro={aliasFrame.namePropert}&amp;parametro={aliasFrame2.namePropert2}</code><ul>
-<li><code>nome=reginaldo</code> </li>
-</ul>
-</li>
-<li><code>/{aliasFrame.namePropert}</code>. <ul>
-<li><code>/Cliente/234</code></li>
-</ul>
-</li>
+<li><code>parametro={aliasFrame.namePropert}</code>. Caso tenha mais de um parametro, teriamos algo como <code>parametro={aliasFrame.namePropert}&amp;parametro={aliasFrame2.namePropert2}</code></li>
+<li><code>/{aliasFrame.namePropert}</code>. </li>
 </ol>
-<p><strong>Nota: A sintaxe de objeto propriedade {{objeto.propriedade}}, pode ser substituida por constantes, exemplo: <code>?id=12345</code> ou <code>/12345</code></strong></p>
+<p><strong>Nota: A sintaxe de objeto propriedade {objeto.propriedade}, pode ser substituida por constantes, exemplo: <code>?id=12345</code> ou <code>/12345</code></strong></p>
 <p>Após a construção completa da url, teriamos <code>http://localhost:5016/OrdemServico?id=12345</code>, <code>http://localhost:5016/OrdemServico/12345</code>  ou outra URL absoluta.</p>
-<p><br></p>
+<h2 id="path-absoluto-ou-nova-url">Path Absoluto ou nova URL</h2>
+<p>Nesse modalidade de criação, toda configuração criada é ignorada e uma nova URL é criada. Para isso utilize a propriedade  <code>button.URL.absolute</code>.
+<code>www.novo.com/images?code=21wequweui</code></p>
+<p>O objetivo aqui é criar URL's que façam por exemplo referência a aplicações terceiras.
+<br></p>
 <h5 id="itens-relacionados">Itens Relacionados</h5>
 <p><a href="https://github.com/rucula-js/rucula-js">⭐ Visite o projeto rucula-js ⭐</a></p>
 <div class="rucula-info">
@@ -1079,7 +1052,7 @@
     <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.081f42fc.min.js"></script>
+      <script src="../../assets/javascripts/bundle.af256bd8.min.js"></script>
       
     
   </body>
